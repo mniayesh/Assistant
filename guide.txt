@@ -1,0 +1,223 @@
+GUIDE — Repository + Project Reference
+
+This guide combines the root repository overview and the canonical project README into one document.
+
+=== ROOT REPOSITORY OVERVIEW ===
+
+Accu Gateway Repository — Overview
+
+This repository contains a Cloudflare Workers gateway for AccuLynx plus legacy assistant sources and utilities. The canonical, deployable project lives in `projects/accu-gateway`.
+
+Minimum tooling
+- Node.js 18+ (tested with Node 20)
+- Wrangler 4.38.0+
+
+Security
+- No cookie/session forging is used in the canonical Worker. If a browser session is required, use the Cloudflare Workers Browser Rendering binding (`MYBROWSER`).
+
+Repository Layout
+- projects/accu-gateway — Canonical Cloudflare Worker gateway (deploys to workers.dev)
+  - gateway.worker.js — Worker code (fetch handler, queue consumer, DO class)
+  - wrangler.toml — Bindings, assets, DO migration
+  - package.json — Scripts (dev, deploy, OpenAPI/Action generators)
+  - public/ — Static assets (OpenAPI and Action manifests, logo)
+    - openapi.assistant.json
+    - .well-known/assistant.ai-plugin.json
+    - .well-known/ai-plugin.json
+    - logo.svg
+  - scripts/ — Project utilities
+    - ops.generate.mjs — Generate op list from OpenAPI YAML
+    - openapi.generate.mjs — Write public/openapi.json
+    - action.assistant.build.mjs — Build openapi.assistant.json and assistant manifest
+    - seed.kv.sh — Seed KV with policy/templates/materials
+  - seeds/kv/*.json — KV seed data (policies, templates, materials)
+  - tests/meta.test.mjs — Simple meta test
+  - run.codex.sh / run.codex.command — Environment checks (Wrangler login, secrets)
+- Documents/Acculynx Assistant/ — Legacy assistant copy (not deployed)
+- Documents/Gateway/ — Older gateway sources (not deployed)
+- Acculynx-Assistant/ — Legacy duplicates (not deployed)
+- MIGRATION_NOTES.md — What moved and why
+- .gitignore — Repo ignores
+
+Canonical Worker (projects/accu-gateway)
+
+Bindings (wrangler.toml; enabled)
+- DB (D1): accu_gateway_db — database_id 5a037ae7-3a25-4b77-a669-d6e2340bb1a9
+- POLICY_KV (KV): namespace_id d9959d0871f14fe29554423e50de5ddf
+- DOCS (R2): bucket acculynx-uploads
+- JOBS_OUT (Queues): queue accu-jobs (producer + consumer)
+- JOB (Durable Object): class JobController (migrations tag v1)
+- VECTORS (Vectorize): index accu-policies
+- AI (Workers AI)
+- MYBROWSER (Browser Rendering)
+- METRICS (Analytics Engine): dataset accu_gateway
+
+Secrets
+- ACCULYNX_TOKEN (required)
+- ACCULYNX_TOKEN__<actorUserId> (optional per-user)
+- GATEWAY_TOKEN (optional gateway auth)
+
+Assets (served)
+- /.well-known/assistant.ai-plugin.json — Assistant Action manifest
+- /openapi.assistant.json — Assistant OpenAPI (Operation enum + per-op schemas)
+- /.well-known/ai-plugin.json and /openapi.json — Generic OpenAPI
+- /logo.svg
+
+Health/version
+- GET /health → { ok: true }
+- GET /version → { ok, buildTime, features: { d1, r2, kv, queues, ai } }
+
+Gateway endpoints
+- GET /gateway/meta → { ok, counts, operations[] }
+- GET /gateway/ops/{operation} → { ok, operation, method, path, requiredPath[] }
+- POST /gateway → dispatch by operation name
+  Body: { operation, actorUserId?, timeoutMs?, dryRun?, params:{ path?, query?, body?, contentType? } }
+- POST /gateway/raw → stream arbitrary body
+  Query: operation? OR (path+method); actorUserId?; timeoutMs?; baseUrl?
+
+R2 helpers
+- GET|PUT /r2/object/{key}
+- POST /r2/presign → { urls:{ get, put } }
+
+Policy/readiness & tools
+- POST /readiness/analyze → { jobId, observed } → { result:{ missing[], warnings[], mislabeled[] } }
+- GET /tools/url-info?url=...
+
+Queue consumer
+- Default export includes queue() bound to accu-jobs. Parses sources, persists D1, stores to R2, computes worksheet + events.
+
+Durable Object
+- JobController (basic storage test endpoints /state, /bump).
+
+KV seed keys (examples)
+- policy:must_haves:v1, policy:photos:required:v1, policy:labels:v1
+- templates:messages:v1, materials:cheatsheet:v1, tags:roles:v1
+
+Assistant OpenAPI (assistant)
+- Operation enum covers 158 AccuLynx ops.
+- x-accu-ops: [{ operation, method, path }]
+- Per-operation request schemas in components/schemas and x-accu-op-schemas.
+
+Auth/CORS
+- Inbound gateway auth is optional (GATEWAY_TOKEN). CORS: *; headers authorization, content-type; methods GET, POST, OPTIONS.
+
+Commands (projects/accu-gateway)
+- npm run dev — wrangler dev
+- npm run deploy — wrangler deploy
+- npm run check — node --check gateway.worker.js
+- npm test — node tests/meta.test.mjs
+- npm run openapi:json — node scripts/openapi.generate.mjs
+- npm run action:assistant — node scripts/action.assistant.build.mjs
+- bash run.codex.sh [env] — verify Wrangler login and ACCULYNX_TOKEN
+- NAMESPACE_ID=... bash scripts/seed.kv.sh — seed KV
+
+Legacy Assistant (reference only; not deployed)
+- Assistant/material-order endpoints present under Documents/Acculynx Assistant/services
+  - POST /assistant/material-order/wizard
+  - POST /assistant/material-order/build
+  - POST /assistant/material-order/compose-ui-put
+  - POST /assistant/material-order/submit
+  - POST /assistant/material-order/reconcile
+  - GET|POST /assistant/material-order/endpoints-from-html
+  - POST /assistant/material-order/save-draft-token
+  - POST /assistant/material-order/submit-via-gateway
+  - (Legacy session-bound) POST /assistant/material-order/auto-draft
+  - (Legacy session-bound) POST /assistant/material-order/submit-to-supplier
+  - UI endpoints referenced: GET /api/Orders/BeginSupplierOrder, GET /api/Orders/{orderId}, PUT /api/Orders/{orderId}
+
+Data stores
+- D1 tables: jobs, estimates, estimate_lines, worksheet, worksheet_lines, events
+- R2 objects via /r2/object/{key}
+- KV keys as listed above
+
+Troubleshooting
+- Wrangler login: npx wrangler whoami / npx wrangler login
+- Secrets: npx wrangler secret put ACCULYNX_TOKEN
+- Vectorize binding uses [[vectorize]] table (array) with binding/index_name
+- Durable Objects require [[migrations]] new_classes
+- Queue consumer requires default export to include queue (already exported)
+
+=== CANONICAL PROJECT README (PROJECTS/ACCU-GATEWAY) ===
+
+Accu Gateway — Cloudflare Worker
+
+A single Worker that:
+- Proxies AccuLynx operations via POST /gateway
+- Streams raw uploads/payloads to upstream via POST /gateway/raw
+- Exposes GET /gateway/meta for discovery of supported operation names
+- Supports multipart form, per-user token routing (actorUserId), and timeout overrides (timeoutMs)
+
+Quick start
+1) wrangler secret put ACCULYNX_TOKEN
+2) wrangler dev
+3) wrangler deploy
+Per-user token: ACCULYNX_TOKEN__<actorUserId>
+
+Endpoints
+- GET /gateway/meta → { ok, counts, operations[] }
+- POST /gateway → dispatch
+  Body: { operation, actorUserId?, timeoutMs?, params:{ path, query, body, contentType } }
+- POST /gateway/raw → stream arbitrary body; query: operation? or (path+method), actorUserId?
+
+Assets (served)
+- /.well-known/assistant.ai-plugin.json — Action manifest
+- /openapi.assistant.json — Assistant OpenAPI
+- /.well-known/ai-plugin.json, /openapi.json — Generic OpenAPI
+- /logo.svg
+
+Finance (optional scaffolding)
+- POST /finance/ingest → enqueue parse job (Queues)
+- GET /finance/worksheet/:jobId → latest stored worksheet (D1)
+
+Environment & Auth
+- Required secret: ACCULYNX_TOKEN
+- Optional per-user secret: ACCULYNX_TOKEN__<actorUserId>
+- Inbound Authorization enforced only if GATEWAY_TOKEN is set
+
+No Cookie Forging; Use Workers Browser Rendering
+- Prefer Browser Rendering binding for any browser-required flows.
+
+ChatGPT Action
+- Build OpenAPI: npm run openapi:json
+- Edit `.well-known/ai-plugin.json` host; deploy
+- Import OpenAPI or manifest URL into ChatGPT Actions
+- CORS is permissive; main calls are /gateway, /gateway/raw, /gateway/meta
+
+Platform Bindings (Wrangler)
+- AI: [ai] binding = "AI"
+- KV: [[kv_namespaces]] → POLICY_KV
+- R2: [[r2_buckets]] → DOCS
+- D1: [[d1_databases]] → DB
+- Queues: [[queues.producers]] and [[queues.consumers]] → JOBS_OUT
+- Durable Objects: [[durable_objects.bindings]] → JobController
+- Vectorize: [[vectorize]] → VECTORS
+- Browser Rendering: [browser] binding = "MYBROWSER"
+- Trace Events Logpush: configured via Dashboard/API
+
+OpenAPI
+- See gateway.openapi.yaml; assistant OpenAPI enumerates all operations and includes per-operation request schemas.
+
+Deployment URLs
+- Local: http://localhost:8787
+- workers.dev: https://accu-gateway.mniayesh.workers.dev
+
+Environments & routes
+- Example [env.staging], [env.prod] sections in wrangler.toml
+- Set secrets per-env with --env
+
+Generated operations
+- npm install; npm run generate:ops; npm run check; npm test
+
+Use with ChatGPT (Actions)
+- OpenAPI URL: https://accu-gateway.mniayesh.workers.dev/openapi.json
+- Optional Authorization: Bearer <GATEWAY_TOKEN>
+
+Helper Endpoints (ChatGPT-friendly)
+- GET /health
+- GET /version
+- GET /gateway/meta
+- GET /gateway/ops/{name}
+- Dry-run on /gateway (body.dryRun true)
+- R2 helper: POST /r2/presign; GET/PUT /r2/object/{key}
+- Readiness: POST /readiness/analyze
+

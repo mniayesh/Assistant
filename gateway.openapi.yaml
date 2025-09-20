@@ -1,0 +1,242 @@
+openapi: 3.1.0
+info:
+  title: Accu Gateway
+  version: 1.0.0
+servers:
+- url: https://your-worker.example.com
+paths:
+  /gateway/meta:
+    get:
+      operationId: gateway.meta
+      summary: List supported operations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /gateway/raw:
+    post:
+      operationId: gateway.rawProxy
+      summary: Stream a raw upload/download to a known upstream operation/path
+      parameters:
+      - name: operation
+        in: query
+        schema:
+          type: string
+          enum: &id001
+          - changeUserRole
+          - createContact
+          - createContactSearch
+          - createEstimate
+          - createInvoice
+          - createJob
+          - createJobDocumentsByJobId
+          - createJobExternalReferences
+          - createJobMeasurementsFilesByJobId
+          - createJobMessagesByJobId
+          - createJobMessagesRepliesByJobIdByMessageId
+          - createJobPaymentsExpenseByJobId
+          - createJobPaymentsPaidByJobId
+          - createJobPaymentsReceivedByJobId
+          - createJobPhotosVideosByJobId
+          - createJobRepresentativesArOwnerByJobId
+          - createJobRepresentativesCompanyByJobId
+          - createJobRepresentativesSalesOwnerByJobId
+          - createJobSearch
+          - createLead
+          - createLeadImportHomeadvisorLead
+          - createSupplement
+          - createTransaction
+          - createUser
+          - createWebhookSubscription
+          - deactivateUser
+          - deleteContact
+          - deleteEstimate
+          - deleteInvoice
+          - deleteJob
+          - deleteJobRepresentativesArOwnerByJobId
+          - deleteJobRepresentativesSalesOwnerByJobId
+          - deleteLead
+          - deleteSupplement
+          - deleteUser
+          - deleteWebhookSubscription
+          - getAcculynxCountries
+          - getAcculynxCountriesByCountryId
+          - getAcculynxCountriesStatesByCountryId
+          - getAcculynxCountriesStatesByCountryIdByStateId
+          - getAdvancedReports
+          - getCalendarAppointmentsByCalendarIdByAppointmentId
+          - getCalendars
+          - getCalendarsAppointmentsByCalendarId
+          - getCompanySettingLeadsLeadSourcesByLeadSourceId
+          - getCompanySettingLeadsLeadSourcesChildrenByLeadSourceParentIdByLeadSourceId
+          - getCompanySettingLocationSettingsAccountTypesByAccountTypeId
+          - getCompanySettings
+          - getCompanySettingsJobFileSettingsDocumentFolders
+          - getCompanySettingsJobFileSettingsInsuranceCompanies
+          - getCompanySettingsJobFileSettingsJobCategories
+          - getCompanySettingsJobFileSettingsPhotoVideoTags
+          - getCompanySettingsJobFileSettingsTradeTypes
+          - getCompanySettingsJobFileSettingsWorkTypes
+          - getCompanySettingsJobFileSettingsWorkflowMilestones
+          - getCompanySettingsJobFileSettingsWorkflowMilestonesStatusesByMilestone
+          - getCompanySettingsLeadsLeadSources
+          - getCompanySettingsLocationSettingsAccountTypes
+          - getCompanySettingsLocationSettingsCountries
+          - getCompanySettingsLocationSettingsCountriesStatesByCountryId
+          - getCompanySettingsLocationSettingsCountriesStatesByCountryIdByStateId
+          - getContactByContactId
+          - getContacts
+          - getContactsEmailAddressesByContactId
+          - getContactsPhoneNumbersByContactId
+          - getDiagnosticsPing
+          - getEstimateByEstimateId
+          - getEstimateSectionsByEstimateIdByEstimateSectionId
+          - getEstimateSectionsItemsByEstimateIdByEstimateSectionIdByEstimateItemId
+          - getEstimates
+          - getEstimatesSectionsByEstimateId
+          - getEstimatesSectionsItemsByEstimateIdByEstimateSectionId
+          - getFinancialAmendmentsByFinancialsIdByFinancialsAmendmentId
+          - getFinancialByFinancialsId
+          - getFinancialsAmendmentsByFinancialsId
+          - getFinancialsByJobId
+          - getFinancialsWorksheetByFinancialsId
+          - getInvoiceByInvoiceId
+          - getInvoices
+          - getJobByJobId
+          - getJobMilestonesByJobIdByMilestoneId
+          - getJobMilestonesStatusByJobIdByMilestoneIdByStatusId
+          - getJobs
+          - getJobsAccountingIntegrationStatusByJobId
+          - getJobsAdjusterByJobId
+          - getJobsContactsByJobId
+          - getJobsContractWorksheetByJobId
+          - getJobsEstimatesByJobId
+          - getJobsExternalReferences
+          - getJobsFinancialsByJobId
+          - getJobsHistoryByJobId
+          - getJobsInitialAppointmentByJobId
+          - getJobsInsuranceByJobId
+          - getJobsInvoicesByJobId
+          - getJobsMilestonesCurrentByJobId
+          - getJobsMilestonesHistoryByJobId
+          - getJobsPaymentsByJobId
+          - getJobsPaymentsOverviewByJobId
+          - getJobsRepresentativesByJobId
+          - getJobsRepresentativesCompanyByJobId
+          - getLeadByLeadId
+          - getLeads
+          - getLeadsHistoryByLeadId
+          - getR2DownloadUrl
+          - getR2UploadUrl
+          - getReportScheduledReportsRunsByScheduledReportIdByInstanceRunId
+          - getReportScheduledReportsRunsRecipientsByScheduledReportIdByInstanceRunIdByRecipientId
+          - getReportsScheduledReportsRunsByScheduledReportId
+          - getReportsScheduledReportsRunsLatestByScheduledReportId
+          - getReportsScheduledReportsRunsRecipientsByScheduledReportIdByInstanceRunId
+          - getSupplementBySupplementId
+          - getSupplements
+          - getUserByUserId
+          - getUsers
+          - listWebhookSubscriptions
+          - updateContact
+          - updateEstimate
+          - updateInvoice
+          - updateJob
+          - updateJobInitialAppointmentByJobId
+          - updateJobInsuranceInsuranceCompanyByJobId
+          - updateLead
+          - updateSupplement
+          - updateTransaction
+          - updateUser
+          - uploadDocumentRaw
+      - name: path
+        in: query
+        schema:
+          type: string
+      - name: method
+        in: query
+        schema:
+          type: string
+          default: POST
+      - name: actorUserId
+        in: query
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: Proxied response
+  /gateway:
+    post:
+      operationId: gateway.dispatch
+      summary: Dispatch a named operation to upstream AccuLynx APIs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - operation
+              properties:
+                operation:
+                  type: string
+                  enum: *id001
+                params:
+                  type: object
+                  properties:
+                    path:
+                      type: object
+                      additionalProperties:
+                        type:
+                        - string
+                        - number
+                        - boolean
+                    query:
+                      type: object
+                      additionalProperties:
+                        type:
+                        - string
+                        - number
+                        - boolean
+                    body:
+                      type:
+                      - object
+                      - array
+                      - string
+                      - number
+                      - boolean
+                      - 'null'
+                    contentType:
+                      type: string
+                      enum:
+                      - application/json
+                      - multipart/form-data
+                      - application/x-www-form-urlencoded
+                timeoutMs:
+                  type: integer
+                  default: 30000
+                actorUserId:
+                  type: string
+      responses:
+        '200':
+          description: Upstream response
+          content:
+            application/json:
+              schema:
+                type: object
+            text/plain:
+              schema:
+                type: string
+        4XX:
+          description: Client error
+        5XX:
+          description: Server/Upstream error

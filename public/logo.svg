@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" fill="#0ea5e9"/>
+  <g fill="#fff">
+    <path d="M20 60a40 40 0 1 1 80 0 40 40 0 1 1-80 0zm18 0a22 22 0 1 0 44 0 22 22 0 1 0-44 0z" opacity="0.9"/>
+    <text x="60" y="66" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">AG</text>
+  </g>
+</svg>
+

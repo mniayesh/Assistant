@@ -1,0 +1,8 @@
+{
+  "contract": "(^|.*)(contract)(\\.[A-Za-z0-9]+)?$",
+  "eagleview": "(^|.*)(eagle(view)?|quickmeasures)(\\.[A-Za-z0-9]+)?$",
+  "insurer_estimate": "(^|.*)(estimate|sol)(\\.[A-Za-z0-9]+)?$",
+  "worksheet": "(^|.*)(worksheet|financial)(\\.[A-Za-z0-9]+)?$",
+  "permit_request": "(^|.*)(permit)(\\.[A-Za-z0-9]+)?$"
+}
+

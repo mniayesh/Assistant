@@ -1,0 +1,6643 @@
+[
+  {
+    "name": "acculynx.createLead",
+    "description": "Call upstream operation createLead (POST /api/v1/leads) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createLead"
+    }
+  },
+  {
+    "name": "acculynx.createLeadImportHomeadvisorLead",
+    "description": "Call upstream operation createLeadImportHomeadvisorLead (POST /api/v1/leads/import-homeadvisor-lead) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createLeadImportHomeadvisorLead"
+    }
+  },
+  {
+    "name": "acculynx.deleteLead",
+    "description": "Call upstream operation deleteLead (DELETE /api/v1/leads/{leadId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteLead"
+    }
+  },
+  {
+    "name": "acculynx.updateLead",
+    "description": "Call upstream operation updateLead (PUT /api/v1/leads/{leadId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateLead"
+    }
+  },
+  {
+    "name": "acculynx.getAcculynxCountries",
+    "description": "Call upstream operation getAcculynxCountries (GET /api/v2/acculynx/countries) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getAcculynxCountries"
+    }
+  },
+  {
+    "name": "acculynx.getAcculynxCountriesByCountryId",
+    "description": "Call upstream operation getAcculynxCountriesByCountryId (GET /api/v2/acculynx/countries/{countryId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getAcculynxCountriesByCountryId"
+    }
+  },
+  {
+    "name": "acculynx.getAcculynxCountriesStatesByCountryId",
+    "description": "Call upstream operation getAcculynxCountriesStatesByCountryId (GET /api/v2/acculynx/countries/{countryId}/states) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getAcculynxCountriesStatesByCountryId"
+    }
+  },
+  {
+    "name": "acculynx.getAcculynxCountriesStatesByCountryIdByStateId",
+    "description": "Call upstream operation getAcculynxCountriesStatesByCountryIdByStateId (GET /api/v2/acculynx/countries/{countryId}/states/{stateId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            },
+            "stateId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getAcculynxCountriesStatesByCountryIdByStateId"
+    }
+  },
+  {
+    "name": "acculynx.getCalendars",
+    "description": "Call upstream operation getCalendars (GET /api/v2/calendars) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCalendars"
+    }
+  },
+  {
+    "name": "acculynx.getCalendarsAppointmentsByCalendarId",
+    "description": "Call upstream operation getCalendarsAppointmentsByCalendarId (GET /api/v2/calendars/{calendarId}/appointments) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "calendarId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCalendarsAppointmentsByCalendarId"
+    }
+  },
+  {
+    "name": "acculynx.getCalendarAppointmentsByCalendarIdByAppointmentId",
+    "description": "Call upstream operation getCalendarAppointmentsByCalendarIdByAppointmentId (GET /api/v2/calendars/{calendarId}/appointments/{appointmentId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "calendarId": {
+              "type": "string"
+            },
+            "appointmentId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCalendarAppointmentsByCalendarIdByAppointmentId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettings",
+    "description": "Call upstream operation getCompanySettings (GET /api/v2/company-settings) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettings"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsDocumentFolders",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsDocumentFolders (GET /api/v2/company-settings/job-file-settings/document-folders) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsDocumentFolders"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsInsuranceCompanies",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsInsuranceCompanies (GET /api/v2/company-settings/job-file-settings/insurance-companies) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsInsuranceCompanies"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsJobCategories",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsJobCategories (GET /api/v2/company-settings/job-file-settings/job-categories) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsJobCategories"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsPhotoVideoTags",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsPhotoVideoTags (GET /api/v2/company-settings/job-file-settings/photo-video-tags) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsPhotoVideoTags"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsTradeTypes",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsTradeTypes (GET /api/v2/company-settings/job-file-settings/trade-types) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsTradeTypes"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsWorkTypes",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsWorkTypes (GET /api/v2/company-settings/job-file-settings/work-types) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsWorkTypes"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsWorkflowMilestones",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsWorkflowMilestones (GET /api/v2/company-settings/job-file-settings/workflow-milestones) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsWorkflowMilestones"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsWorkflowMilestonesStatusesByMilestone",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsWorkflowMilestonesStatusesByMilestone (GET /api/v2/company-settings/job-file-settings/workflow-milestones/{milestone}/statuses) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "milestone": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsWorkflowMilestonesStatusesByMilestone"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLeadsLeadSources",
+    "description": "Call upstream operation getCompanySettingsLeadsLeadSources (GET /api/v2/company-settings/leads/lead-sources) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLeadsLeadSources"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingLeadsLeadSourcesByLeadSourceId",
+    "description": "Call upstream operation getCompanySettingLeadsLeadSourcesByLeadSourceId (GET /api/v2/company-settings/leads/lead-sources/{leadSourceId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadSourceId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingLeadsLeadSourcesByLeadSourceId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingLeadsLeadSourcesChildrenByLeadSourceParentIdByLeadSourceId",
+    "description": "Call upstream operation getCompanySettingLeadsLeadSourcesChildrenByLeadSourceParentIdByLeadSourceId (GET /api/v2/company-settings/leads/lead-sources/{leadSourceParentId}/children/{leadSourceId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadSourceParentId": {
+              "type": "string"
+            },
+            "leadSourceId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingLeadsLeadSourcesChildrenByLeadSourceParentIdByLeadSourceId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLocationSettingsAccountTypes",
+    "description": "Call upstream operation getCompanySettingsLocationSettingsAccountTypes (GET /api/v2/company-settings/location-settings/account-types) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLocationSettingsAccountTypes"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingLocationSettingsAccountTypesByAccountTypeId",
+    "description": "Call upstream operation getCompanySettingLocationSettingsAccountTypesByAccountTypeId (GET /api/v2/company-settings/location-settings/account-types/{accountTypeId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "accountTypeId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingLocationSettingsAccountTypesByAccountTypeId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLocationSettingsCountries",
+    "description": "Call upstream operation getCompanySettingsLocationSettingsCountries (GET /api/v2/company-settings/location-settings/countries) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLocationSettingsCountries"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLocationSettingsCountriesStatesByCountryId",
+    "description": "Call upstream operation getCompanySettingsLocationSettingsCountriesStatesByCountryId (GET /api/v2/company-settings/location-settings/countries/{countryId}/states) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLocationSettingsCountriesStatesByCountryId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettings",
+    "description": "Call upstream operation getCompanySettings (GET /api/v2/company/settings) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettings"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsDocumentFolders",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsDocumentFolders (GET /api/v2/company/settings/jobFileSettings/documentFolders) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsDocumentFolders"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsInsuranceCompanies",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsInsuranceCompanies (GET /api/v2/company/settings/jobFileSettings/insuranceCompanies) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsInsuranceCompanies"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsJobCategories",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsJobCategories (GET /api/v2/company/settings/jobFileSettings/jobCategories) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsJobCategories"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsPhotoVideoTags",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsPhotoVideoTags (GET /api/v2/company/settings/jobFileSettings/photoVideoTags) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsPhotoVideoTags"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsTradeTypes",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsTradeTypes (GET /api/v2/company/settings/jobFileSettings/tradeTypes) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsTradeTypes"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsWorkTypes",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsWorkTypes (GET /api/v2/company/settings/jobFileSettings/workTypes) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsWorkTypes"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsWorkflowMilestones",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsWorkflowMilestones (GET /api/v2/company/settings/jobFileSettings/workflowMilestones) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsWorkflowMilestones"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsJobFileSettingsWorkflowMilestonesStatusesByMilestone",
+    "description": "Call upstream operation getCompanySettingsJobFileSettingsWorkflowMilestonesStatusesByMilestone (GET /api/v2/company/settings/jobFileSettings/workflowMilestones/{milestone}/statuses) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "milestone": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsJobFileSettingsWorkflowMilestonesStatusesByMilestone"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLeadsLeadSources",
+    "description": "Call upstream operation getCompanySettingsLeadsLeadSources (GET /api/v2/company/settings/leads/leadSources) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLeadsLeadSources"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingLeadsLeadSourcesByLeadSourceId",
+    "description": "Call upstream operation getCompanySettingLeadsLeadSourcesByLeadSourceId (GET /api/v2/company/settings/leads/leadSources/{leadSourceId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadSourceId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingLeadsLeadSourcesByLeadSourceId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingLeadsLeadSourcesChildrenByLeadSourceParentIdByLeadSourceId",
+    "description": "Call upstream operation getCompanySettingLeadsLeadSourcesChildrenByLeadSourceParentIdByLeadSourceId (GET /api/v2/company/settings/leads/leadSources/{leadSourceParentId}/children/{leadSourceId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadSourceParentId": {
+              "type": "string"
+            },
+            "leadSourceId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingLeadsLeadSourcesChildrenByLeadSourceParentIdByLeadSourceId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLocationSettingsAccountTypes",
+    "description": "Call upstream operation getCompanySettingsLocationSettingsAccountTypes (GET /api/v2/company/settings/locationSettings/accountTypes) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLocationSettingsAccountTypes"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingLocationSettingsAccountTypesByAccountTypeId",
+    "description": "Call upstream operation getCompanySettingLocationSettingsAccountTypesByAccountTypeId (GET /api/v2/company/settings/locationSettings/accountTypes/{accountTypeId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "accountTypeId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingLocationSettingsAccountTypesByAccountTypeId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLocationSettingsCountries",
+    "description": "Call upstream operation getCompanySettingsLocationSettingsCountries (GET /api/v2/company/settings/locationSettings/countries) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLocationSettingsCountries"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLocationSettingsCountriesStatesByCountryId",
+    "description": "Call upstream operation getCompanySettingsLocationSettingsCountriesStatesByCountryId (GET /api/v2/company/settings/locationSettings/countries/{countryId}/states) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLocationSettingsCountriesStatesByCountryId"
+    }
+  },
+  {
+    "name": "acculynx.getCompanySettingsLocationSettingsCountriesStatesByCountryIdByStateId",
+    "description": "Call upstream operation getCompanySettingsLocationSettingsCountriesStatesByCountryIdByStateId (GET /api/v2/company/settings/locationSettings/countries/{countryId}/states/{stateId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            },
+            "stateId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getCompanySettingsLocationSettingsCountriesStatesByCountryIdByStateId"
+    }
+  },
+  {
+    "name": "acculynx.getContacts",
+    "description": "Call upstream operation getContacts (GET /api/v2/contacts) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getContacts"
+    }
+  },
+  {
+    "name": "acculynx.createContact",
+    "description": "Call upstream operation createContact (POST /api/v2/contacts) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createContact"
+    }
+  },
+  {
+    "name": "acculynx.createContactSearch",
+    "description": "Call upstream operation createContactSearch (POST /api/v2/contacts/search) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createContactSearch"
+    }
+  },
+  {
+    "name": "acculynx.deleteContact",
+    "description": "Call upstream operation deleteContact (DELETE /api/v2/contacts/{contactId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "contactId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteContact"
+    }
+  },
+  {
+    "name": "acculynx.getContactByContactId",
+    "description": "Call upstream operation getContactByContactId (GET /api/v2/contacts/{contactId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "contactId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getContactByContactId"
+    }
+  },
+  {
+    "name": "acculynx.updateContact",
+    "description": "Call upstream operation updateContact (PUT /api/v2/contacts/{contactId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "contactId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateContact"
+    }
+  },
+  {
+    "name": "acculynx.getContactsEmailAddressesByContactId",
+    "description": "Call upstream operation getContactsEmailAddressesByContactId (GET /api/v2/contacts/{contactId}/emailAddresses) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "contactId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getContactsEmailAddressesByContactId"
+    }
+  },
+  {
+    "name": "acculynx.getContactsPhoneNumbersByContactId",
+    "description": "Call upstream operation getContactsPhoneNumbersByContactId (GET /api/v2/contacts/{contactId}/phoneNumbers) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "contactId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getContactsPhoneNumbersByContactId"
+    }
+  },
+  {
+    "name": "acculynx.getAcculynxCountries",
+    "description": "Call upstream operation getAcculynxCountries (GET /api/v2/countries) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getAcculynxCountries"
+    }
+  },
+  {
+    "name": "acculynx.getAcculynxCountriesByCountryId",
+    "description": "Call upstream operation getAcculynxCountriesByCountryId (GET /api/v2/countries/{countryId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getAcculynxCountriesByCountryId"
+    }
+  },
+  {
+    "name": "acculynx.getAcculynxCountriesStatesByCountryId",
+    "description": "Call upstream operation getAcculynxCountriesStatesByCountryId (GET /api/v2/countries/{countryId}/states) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getAcculynxCountriesStatesByCountryId"
+    }
+  },
+  {
+    "name": "acculynx.getAcculynxCountriesStatesByCountryIdByStateId",
+    "description": "Call upstream operation getAcculynxCountriesStatesByCountryIdByStateId (GET /api/v2/countries/{countryId}/states/{stateId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "countryId": {
+              "type": "string"
+            },
+            "stateId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getAcculynxCountriesStatesByCountryIdByStateId"
+    }
+  },
+  {
+    "name": "acculynx.getDiagnosticsPing",
+    "description": "Call upstream operation getDiagnosticsPing (GET /api/v2/diagnostics/ping) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getDiagnosticsPing"
+    }
+  },
+  {
+    "name": "acculynx.getEstimates",
+    "description": "Call upstream operation getEstimates (GET /api/v2/estimates) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getEstimates"
+    }
+  },
+  {
+    "name": "acculynx.createEstimate",
+    "description": "Call upstream operation createEstimate (POST /api/v2/estimates) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createEstimate"
+    }
+  },
+  {
+    "name": "acculynx.deleteEstimate",
+    "description": "Call upstream operation deleteEstimate (DELETE /api/v2/estimates/{estimateId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "estimateId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteEstimate"
+    }
+  },
+  {
+    "name": "acculynx.getEstimateByEstimateId",
+    "description": "Call upstream operation getEstimateByEstimateId (GET /api/v2/estimates/{estimateId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "estimateId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getEstimateByEstimateId"
+    }
+  },
+  {
+    "name": "acculynx.updateEstimate",
+    "description": "Call upstream operation updateEstimate (PUT /api/v2/estimates/{estimateId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "estimateId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateEstimate"
+    }
+  },
+  {
+    "name": "acculynx.getEstimatesSectionsByEstimateId",
+    "description": "Call upstream operation getEstimatesSectionsByEstimateId (GET /api/v2/estimates/{estimateId}/sections) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "estimateId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getEstimatesSectionsByEstimateId"
+    }
+  },
+  {
+    "name": "acculynx.getEstimateSectionsByEstimateIdByEstimateSectionId",
+    "description": "Call upstream operation getEstimateSectionsByEstimateIdByEstimateSectionId (GET /api/v2/estimates/{estimateId}/sections/{sectionId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "estimateId": {
+              "type": "string"
+            },
+            "sectionId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getEstimateSectionsByEstimateIdByEstimateSectionId"
+    }
+  },
+  {
+    "name": "acculynx.getEstimatesSectionsItemsByEstimateIdByEstimateSectionId",
+    "description": "Call upstream operation getEstimatesSectionsItemsByEstimateIdByEstimateSectionId (GET /api/v2/estimates/{estimateId}/sections/{sectionId}/items) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "estimateId": {
+              "type": "string"
+            },
+            "sectionId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getEstimatesSectionsItemsByEstimateIdByEstimateSectionId"
+    }
+  },
+  {
+    "name": "acculynx.getEstimateSectionsItemsByEstimateIdByEstimateSectionIdByEstimateItemId",
+    "description": "Call upstream operation getEstimateSectionsItemsByEstimateIdByEstimateSectionIdByEstimateItemId (GET /api/v2/estimates/{estimateId}/sections/{sectionId}/items/{itemId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "estimateId": {
+              "type": "string"
+            },
+            "sectionId": {
+              "type": "string"
+            },
+            "itemId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getEstimateSectionsItemsByEstimateIdByEstimateSectionIdByEstimateItemId"
+    }
+  },
+  {
+    "name": "acculynx.getFinancialByFinancialsId",
+    "description": "Call upstream operation getFinancialByFinancialsId (GET /api/v2/financials/{financialsId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "financialsId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getFinancialByFinancialsId"
+    }
+  },
+  {
+    "name": "acculynx.getFinancialsAmendmentsByFinancialsId",
+    "description": "Call upstream operation getFinancialsAmendmentsByFinancialsId (GET /api/v2/financials/{financialsId}/amendments) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "financialsId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getFinancialsAmendmentsByFinancialsId"
+    }
+  },
+  {
+    "name": "acculynx.getFinancialAmendmentsByFinancialsIdByFinancialsAmendmentId",
+    "description": "Call upstream operation getFinancialAmendmentsByFinancialsIdByFinancialsAmendmentId (GET /api/v2/financials/{financialsId}/amendments/{amendmentId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "financialsId": {
+              "type": "string"
+            },
+            "amendmentId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getFinancialAmendmentsByFinancialsIdByFinancialsAmendmentId"
+    }
+  },
+  {
+    "name": "acculynx.getFinancialsWorksheetByFinancialsId",
+    "description": "Call upstream operation getFinancialsWorksheetByFinancialsId (GET /api/v2/financials/{financialsId}/worksheet) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "financialsId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getFinancialsWorksheetByFinancialsId"
+    }
+  },
+  {
+    "name": "acculynx.getInvoices",
+    "description": "Call upstream operation getInvoices (GET /api/v2/invoices) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getInvoices"
+    }
+  },
+  {
+    "name": "acculynx.createInvoice",
+    "description": "Call upstream operation createInvoice (POST /api/v2/invoices) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createInvoice"
+    }
+  },
+  {
+    "name": "acculynx.deleteInvoice",
+    "description": "Call upstream operation deleteInvoice (DELETE /api/v2/invoices/{invoiceId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "invoiceId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteInvoice"
+    }
+  },
+  {
+    "name": "acculynx.getInvoiceByInvoiceId",
+    "description": "Call upstream operation getInvoiceByInvoiceId (GET /api/v2/invoices/{invoiceId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "invoiceId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getInvoiceByInvoiceId"
+    }
+  },
+  {
+    "name": "acculynx.updateInvoice",
+    "description": "Call upstream operation updateInvoice (PUT /api/v2/invoices/{invoiceId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "invoiceId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateInvoice"
+    }
+  },
+  {
+    "name": "acculynx.getJobs",
+    "description": "Call upstream operation getJobs (GET /api/v2/jobs) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getJobs"
+    }
+  },
+  {
+    "name": "acculynx.createJob",
+    "description": "Call upstream operation createJob (POST /api/v2/jobs) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createJob"
+    }
+  },
+  {
+    "name": "acculynx.createJobExternalReferences",
+    "description": "Call upstream operation createJobExternalReferences (POST /api/v2/jobs/external-references) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createJobExternalReferences"
+    }
+  },
+  {
+    "name": "acculynx.createJobSearch",
+    "description": "Call upstream operation createJobSearch (POST /api/v2/jobs/search) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createJobSearch"
+    }
+  },
+  {
+    "name": "acculynx.deleteJob",
+    "description": "Call upstream operation deleteJob (DELETE /api/v2/jobs/{jobId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteJob"
+    }
+  },
+  {
+    "name": "acculynx.getJobByJobId",
+    "description": "Call upstream operation getJobByJobId (GET /api/v2/jobs/{jobId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobByJobId"
+    }
+  },
+  {
+    "name": "acculynx.updateJob",
+    "description": "Call upstream operation updateJob (PUT /api/v2/jobs/{jobId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateJob"
+    }
+  },
+  {
+    "name": "acculynx.getJobsAccountingIntegrationStatusByJobId",
+    "description": "Call upstream operation getJobsAccountingIntegrationStatusByJobId (GET /api/v2/jobs/{jobId}/accountingIntegrationStatus) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsAccountingIntegrationStatusByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsAdjusterByJobId",
+    "description": "Call upstream operation getJobsAdjusterByJobId (GET /api/v2/jobs/{jobId}/adjuster) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsAdjusterByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsContactsByJobId",
+    "description": "Call upstream operation getJobsContactsByJobId (GET /api/v2/jobs/{jobId}/contacts) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsContactsByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsContractWorksheetByJobId",
+    "description": "Call upstream operation getJobsContractWorksheetByJobId (GET /api/v2/jobs/{jobId}/contractWorksheet) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsContractWorksheetByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobDocumentsByJobId",
+    "description": "Call upstream operation createJobDocumentsByJobId (POST /api/v2/jobs/{jobId}/documents) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobDocumentsByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsEstimatesByJobId",
+    "description": "Call upstream operation getJobsEstimatesByJobId (GET /api/v2/jobs/{jobId}/estimates) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsEstimatesByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsExternalReferences",
+    "description": "Call upstream operation getJobsExternalReferences (GET /api/v2/jobs/{jobId}/externalReferences) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsExternalReferences"
+    }
+  },
+  {
+    "name": "acculynx.createJobExternalReferences",
+    "description": "Call upstream operation createJobExternalReferences (POST /api/v2/jobs/{jobId}/externalReferences) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobExternalReferences"
+    }
+  },
+  {
+    "name": "acculynx.getFinancialsByJobId",
+    "description": "Call upstream operation getFinancialsByJobId (GET /api/v2/jobs/{jobId}/financials) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getFinancialsByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsFinancialsByJobId",
+    "description": "Call upstream operation getJobsFinancialsByJobId (GET /api/v2/jobs/{jobId}/financials) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsFinancialsByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsHistoryByJobId",
+    "description": "Call upstream operation getJobsHistoryByJobId (GET /api/v2/jobs/{jobId}/history) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsHistoryByJobId"
+    }
+  },
+  {
+    "name": "acculynx.updateJobInitialAppointmentByJobId",
+    "description": "Call upstream operation updateJobInitialAppointmentByJobId (PUT /api/v2/jobs/{jobId}/initial-appointment) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateJobInitialAppointmentByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsInitialAppointmentByJobId",
+    "description": "Call upstream operation getJobsInitialAppointmentByJobId (GET /api/v2/jobs/{jobId}/initialAppointment) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsInitialAppointmentByJobId"
+    }
+  },
+  {
+    "name": "acculynx.updateJobInitialAppointmentByJobId",
+    "description": "Call upstream operation updateJobInitialAppointmentByJobId (PUT /api/v2/jobs/{jobId}/initialAppointment) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateJobInitialAppointmentByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsInsuranceByJobId",
+    "description": "Call upstream operation getJobsInsuranceByJobId (GET /api/v2/jobs/{jobId}/insurance) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsInsuranceByJobId"
+    }
+  },
+  {
+    "name": "acculynx.updateJobInsuranceInsuranceCompanyByJobId",
+    "description": "Call upstream operation updateJobInsuranceInsuranceCompanyByJobId (PUT /api/v2/jobs/{jobId}/insurance/insurance-company) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateJobInsuranceInsuranceCompanyByJobId"
+    }
+  },
+  {
+    "name": "acculynx.updateJobInsuranceInsuranceCompanyByJobId",
+    "description": "Call upstream operation updateJobInsuranceInsuranceCompanyByJobId (PUT /api/v2/jobs/{jobId}/insurance/{insuranceCompanyId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            },
+            "insuranceCompanyId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateJobInsuranceInsuranceCompanyByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsInvoicesByJobId",
+    "description": "Call upstream operation getJobsInvoicesByJobId (GET /api/v2/jobs/{jobId}/invoices) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsInvoicesByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobMeasurementsFilesByJobId",
+    "description": "Call upstream operation createJobMeasurementsFilesByJobId (POST /api/v2/jobs/{jobId}/measurements/files) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobMeasurementsFilesByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobMessagesByJobId",
+    "description": "Call upstream operation createJobMessagesByJobId (POST /api/v2/jobs/{jobId}/messages) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobMessagesByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobMessagesRepliesByJobIdByMessageId",
+    "description": "Call upstream operation createJobMessagesRepliesByJobIdByMessageId (POST /api/v2/jobs/{jobId}/messages/{messageId}/replies) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            },
+            "messageId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobMessagesRepliesByJobIdByMessageId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsMilestonesCurrentByJobId",
+    "description": "Call upstream operation getJobsMilestonesCurrentByJobId (GET /api/v2/jobs/{jobId}/milestones/current) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsMilestonesCurrentByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsMilestonesHistoryByJobId",
+    "description": "Call upstream operation getJobsMilestonesHistoryByJobId (GET /api/v2/jobs/{jobId}/milestones/history) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsMilestonesHistoryByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobMilestonesByJobIdByMilestoneId",
+    "description": "Call upstream operation getJobMilestonesByJobIdByMilestoneId (GET /api/v2/jobs/{jobId}/milestones/{milestoneId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            },
+            "milestoneId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobMilestonesByJobIdByMilestoneId"
+    }
+  },
+  {
+    "name": "acculynx.getJobMilestonesStatusByJobIdByMilestoneIdByStatusId",
+    "description": "Call upstream operation getJobMilestonesStatusByJobIdByMilestoneIdByStatusId (GET /api/v2/jobs/{jobId}/milestones/{milestoneId}/statuses/{statusId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            },
+            "milestoneId": {
+              "type": "string"
+            },
+            "statusId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobMilestonesStatusByJobIdByMilestoneIdByStatusId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsPaymentsByJobId",
+    "description": "Call upstream operation getJobsPaymentsByJobId (GET /api/v2/jobs/{jobId}/payments) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsPaymentsByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobPaymentsExpenseByJobId",
+    "description": "Call upstream operation createJobPaymentsExpenseByJobId (POST /api/v2/jobs/{jobId}/payments/expense) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobPaymentsExpenseByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsPaymentsOverviewByJobId",
+    "description": "Call upstream operation getJobsPaymentsOverviewByJobId (GET /api/v2/jobs/{jobId}/payments/overview) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsPaymentsOverviewByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobPaymentsPaidByJobId",
+    "description": "Call upstream operation createJobPaymentsPaidByJobId (POST /api/v2/jobs/{jobId}/payments/paid) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobPaymentsPaidByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobPaymentsReceivedByJobId",
+    "description": "Call upstream operation createJobPaymentsReceivedByJobId (POST /api/v2/jobs/{jobId}/payments/received) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobPaymentsReceivedByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobPhotosVideosByJobId",
+    "description": "Call upstream operation createJobPhotosVideosByJobId (POST /api/v2/jobs/{jobId}/photos-videos) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobPhotosVideosByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobPhotosVideosByJobId",
+    "description": "Call upstream operation createJobPhotosVideosByJobId (POST /api/v2/jobs/{jobId}/photosVideos) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobPhotosVideosByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsRepresentativesByJobId",
+    "description": "Call upstream operation getJobsRepresentativesByJobId (GET /api/v2/jobs/{jobId}/representatives) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsRepresentativesByJobId"
+    }
+  },
+  {
+    "name": "acculynx.deleteJobRepresentativesArOwnerByJobId",
+    "description": "Call upstream operation deleteJobRepresentativesArOwnerByJobId (DELETE /api/v2/jobs/{jobId}/representatives/ar-owner) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteJobRepresentativesArOwnerByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobRepresentativesArOwnerByJobId",
+    "description": "Call upstream operation createJobRepresentativesArOwnerByJobId (POST /api/v2/jobs/{jobId}/representatives/ar-owner) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobRepresentativesArOwnerByJobId"
+    }
+  },
+  {
+    "name": "acculynx.deleteJobRepresentativesArOwnerByJobId",
+    "description": "Call upstream operation deleteJobRepresentativesArOwnerByJobId (DELETE /api/v2/jobs/{jobId}/representatives/arOwner) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteJobRepresentativesArOwnerByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobRepresentativesArOwnerByJobId",
+    "description": "Call upstream operation createJobRepresentativesArOwnerByJobId (POST /api/v2/jobs/{jobId}/representatives/arOwner) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobRepresentativesArOwnerByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getJobsRepresentativesCompanyByJobId",
+    "description": "Call upstream operation getJobsRepresentativesCompanyByJobId (GET /api/v2/jobs/{jobId}/representatives/company) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getJobsRepresentativesCompanyByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobRepresentativesCompanyByJobId",
+    "description": "Call upstream operation createJobRepresentativesCompanyByJobId (POST /api/v2/jobs/{jobId}/representatives/company) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobRepresentativesCompanyByJobId"
+    }
+  },
+  {
+    "name": "acculynx.deleteJobRepresentativesSalesOwnerByJobId",
+    "description": "Call upstream operation deleteJobRepresentativesSalesOwnerByJobId (DELETE /api/v2/jobs/{jobId}/representatives/sales-owner) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteJobRepresentativesSalesOwnerByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobRepresentativesSalesOwnerByJobId",
+    "description": "Call upstream operation createJobRepresentativesSalesOwnerByJobId (POST /api/v2/jobs/{jobId}/representatives/sales-owner) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobRepresentativesSalesOwnerByJobId"
+    }
+  },
+  {
+    "name": "acculynx.deleteJobRepresentativesSalesOwnerByJobId",
+    "description": "Call upstream operation deleteJobRepresentativesSalesOwnerByJobId (DELETE /api/v2/jobs/{jobId}/representatives/salesOwner) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteJobRepresentativesSalesOwnerByJobId"
+    }
+  },
+  {
+    "name": "acculynx.createJobRepresentativesSalesOwnerByJobId",
+    "description": "Call upstream operation createJobRepresentativesSalesOwnerByJobId (POST /api/v2/jobs/{jobId}/representatives/salesOwner) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "jobId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "createJobRepresentativesSalesOwnerByJobId"
+    }
+  },
+  {
+    "name": "acculynx.getLeads",
+    "description": "Call upstream operation getLeads (GET /api/v2/leads) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getLeads"
+    }
+  },
+  {
+    "name": "acculynx.createLead",
+    "description": "Call upstream operation createLead (POST /api/v2/leads) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createLead"
+    }
+  },
+  {
+    "name": "acculynx.createLeadImportHomeadvisorLead",
+    "description": "Call upstream operation createLeadImportHomeadvisorLead (POST /api/v2/leads/import/homeadvisor) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createLeadImportHomeadvisorLead"
+    }
+  },
+  {
+    "name": "acculynx.deleteLead",
+    "description": "Call upstream operation deleteLead (DELETE /api/v2/leads/{leadId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteLead"
+    }
+  },
+  {
+    "name": "acculynx.getLeadByLeadId",
+    "description": "Call upstream operation getLeadByLeadId (GET /api/v2/leads/{leadId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getLeadByLeadId"
+    }
+  },
+  {
+    "name": "acculynx.updateLead",
+    "description": "Call upstream operation updateLead (PUT /api/v2/leads/{leadId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateLead"
+    }
+  },
+  {
+    "name": "acculynx.getLeadsHistoryByLeadId",
+    "description": "Call upstream operation getLeadsHistoryByLeadId (GET /api/v2/leads/{leadId}/history) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "leadId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getLeadsHistoryByLeadId"
+    }
+  },
+  {
+    "name": "acculynx.getR2DownloadUrl",
+    "description": "Call upstream operation getR2DownloadUrl (POST /api/v2/r2/downloadUrl) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getR2DownloadUrl"
+    }
+  },
+  {
+    "name": "acculynx.getR2UploadUrl",
+    "description": "Call upstream operation getR2UploadUrl (POST /api/v2/r2/uploadUrl) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getR2UploadUrl"
+    }
+  },
+  {
+    "name": "acculynx.getAdvancedReports",
+    "description": "Call upstream operation getAdvancedReports (GET /api/v2/reports/advanced) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getAdvancedReports"
+    }
+  },
+  {
+    "name": "acculynx.getReportsScheduledReportsRunsByScheduledReportId",
+    "description": "Call upstream operation getReportsScheduledReportsRunsByScheduledReportId (GET /api/v2/reports/scheduledReports/{scheduledReportId}/runs) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "scheduledReportId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getReportsScheduledReportsRunsByScheduledReportId"
+    }
+  },
+  {
+    "name": "acculynx.getReportsScheduledReportsRunsLatestByScheduledReportId",
+    "description": "Call upstream operation getReportsScheduledReportsRunsLatestByScheduledReportId (GET /api/v2/reports/scheduledReports/{scheduledReportId}/runs/latest) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "scheduledReportId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getReportsScheduledReportsRunsLatestByScheduledReportId"
+    }
+  },
+  {
+    "name": "acculynx.getReportScheduledReportsRunsByScheduledReportIdByInstanceRunId",
+    "description": "Call upstream operation getReportScheduledReportsRunsByScheduledReportIdByInstanceRunId (GET /api/v2/reports/scheduledReports/{scheduledReportId}/runs/{instanceRunId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "scheduledReportId": {
+              "type": "string"
+            },
+            "instanceRunId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getReportScheduledReportsRunsByScheduledReportIdByInstanceRunId"
+    }
+  },
+  {
+    "name": "acculynx.getReportsScheduledReportsRunsRecipientsByScheduledReportIdByInstanceRunId",
+    "description": "Call upstream operation getReportsScheduledReportsRunsRecipientsByScheduledReportIdByInstanceRunId (GET /api/v2/reports/scheduledReports/{scheduledReportId}/runs/{instanceRunId}/recipients) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "scheduledReportId": {
+              "type": "string"
+            },
+            "instanceRunId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getReportsScheduledReportsRunsRecipientsByScheduledReportIdByInstanceRunId"
+    }
+  },
+  {
+    "name": "acculynx.getReportScheduledReportsRunsRecipientsByScheduledReportIdByInstanceRunIdByRecipientId",
+    "description": "Call upstream operation getReportScheduledReportsRunsRecipientsByScheduledReportIdByInstanceRunIdByRecipientId (GET /api/v2/reports/scheduledReports/{scheduledReportId}/runs/{instanceRunId}/recipients/{recipientId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "scheduledReportId": {
+              "type": "string"
+            },
+            "instanceRunId": {
+              "type": "string"
+            },
+            "recipientId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getReportScheduledReportsRunsRecipientsByScheduledReportIdByInstanceRunIdByRecipientId"
+    }
+  },
+  {
+    "name": "acculynx.getSupplements",
+    "description": "Call upstream operation getSupplements (GET /api/v2/supplements) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getSupplements"
+    }
+  },
+  {
+    "name": "acculynx.createSupplement",
+    "description": "Call upstream operation createSupplement (POST /api/v2/supplements) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createSupplement"
+    }
+  },
+  {
+    "name": "acculynx.deleteSupplement",
+    "description": "Call upstream operation deleteSupplement (DELETE /api/v2/supplements/{supplementId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "supplementId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteSupplement"
+    }
+  },
+  {
+    "name": "acculynx.getSupplementBySupplementId",
+    "description": "Call upstream operation getSupplementBySupplementId (GET /api/v2/supplements/{supplementId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "supplementId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getSupplementBySupplementId"
+    }
+  },
+  {
+    "name": "acculynx.updateSupplement",
+    "description": "Call upstream operation updateSupplement (PUT /api/v2/supplements/{supplementId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "supplementId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateSupplement"
+    }
+  },
+  {
+    "name": "acculynx.createTransaction",
+    "description": "Call upstream operation createTransaction (POST /api/v2/transactions) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createTransaction"
+    }
+  },
+  {
+    "name": "acculynx.updateTransaction",
+    "description": "Call upstream operation updateTransaction (PUT /api/v2/transactions/{transactionId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "transactionId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateTransaction"
+    }
+  },
+  {
+    "name": "acculynx.uploadDocumentRaw",
+    "description": "Call upstream operation uploadDocumentRaw (POST /api/v2/uploads/raw) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "uploadDocumentRaw"
+    }
+  },
+  {
+    "name": "acculynx.getUsers",
+    "description": "Call upstream operation getUsers (GET /api/v2/users) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "getUsers"
+    }
+  },
+  {
+    "name": "acculynx.createUser",
+    "description": "Call upstream operation createUser (POST /api/v2/users) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createUser"
+    }
+  },
+  {
+    "name": "acculynx.deleteUser",
+    "description": "Call upstream operation deleteUser (DELETE /api/v2/users/{userId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "userId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteUser"
+    }
+  },
+  {
+    "name": "acculynx.getUserByUserId",
+    "description": "Call upstream operation getUserByUserId (GET /api/v2/users/{userId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "userId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "getUserByUserId"
+    }
+  },
+  {
+    "name": "acculynx.updateUser",
+    "description": "Call upstream operation updateUser (PUT /api/v2/users/{userId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "userId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "updateUser"
+    }
+  },
+  {
+    "name": "acculynx.changeUserRole",
+    "description": "Call upstream operation changeUserRole (POST /api/v2/users/{userId}/change-role) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "userId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "changeUserRole"
+    }
+  },
+  {
+    "name": "acculynx.deactivateUser",
+    "description": "Call upstream operation deactivateUser (POST /api/v2/users/{userId}/deactivate) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "userId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deactivateUser"
+    }
+  },
+  {
+    "name": "acculynx.listWebhookSubscriptions",
+    "description": "Call upstream operation listWebhookSubscriptions (GET /api/v2/webhooks/subscriptions) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "listWebhookSubscriptions"
+    }
+  },
+  {
+    "name": "acculynx.createWebhookSubscription",
+    "description": "Call upstream operation createWebhookSubscription (POST /api/v2/webhooks/subscriptions) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {}
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      }
+    },
+    "x-gateway": {
+      "operation": "createWebhookSubscription"
+    }
+  },
+  {
+    "name": "acculynx.deleteWebhookSubscription",
+    "description": "Call upstream operation deleteWebhookSubscription (DELETE /api/v2/webhooks/subscriptions/{subscriptionId}) via /gateway.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "object",
+          "description": "Values for path variables",
+          "properties": {
+            "subscriptionId": {
+              "type": "string"
+            }
+          }
+        },
+        "query": {
+          "type": "object",
+          "description": "Optional querystring key/values",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
+          "type": "object",
+          "description": "Body payload for POST/PUT endpoints (if applicable)"
+        },
+        "contentType": {
+          "type": "string",
+          "enum": [
+            "application/json",
+            "multipart/form-data",
+            "application/x-www-form-urlencoded"
+          ],
+          "default": "application/json"
+        }
+      },
+      "required": [
+        "path"
+      ]
+    },
+    "x-gateway": {
+      "operation": "deleteWebhookSubscription"
+    }
+  }
+]

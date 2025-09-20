@@ -1,0 +1,199 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Accu Gateway",
+    "version": "1.2.4",
+    "description": "Gateway for AccuLynx API operations plus helper ops:\n- getR2UploadUrl\n- getR2DownloadUrl\n- dryRun mode\n- /gateway/meta discovery\n"
+  },
+  "servers": [
+    {
+      "url": "https://accu-gateway.mniayesh.workers.dev"
+    }
+  ],
+  "paths": {
+    "/gateway": {
+      "post": {
+        "operationId": "dispatch",
+        "summary": "Dispatch an AccuLynx operation by name",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "operation"
+                ],
+                "properties": {
+                  "operation": {
+                    "type": "string"
+                  },
+                  "actorUserId": {
+                    "type": "string"
+                  },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "object",
+                        "additionalProperties": true
+                      },
+                      "query": {
+                        "type": "object",
+                        "additionalProperties": true
+                      },
+                      "body": {
+                        "type": "object",
+                        "additionalProperties": true
+                      },
+                      "contentType": {
+                        "type": "string",
+                        "enum": [
+                          "application/json",
+                          "multipart/form-data",
+                          "application/x-www-form-urlencoded"
+                        ],
+                        "default": "application/json"
+                      }
+                    }
+                  },
+                  "timeoutMs": {
+                    "type": "integer",
+                    "default": 30000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Upstream response passthrough (JSON or text)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unknown operation or bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized (if enforced by deployment)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found (wrong path/method)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gateway/meta": {
+      "get": {
+        "operationId": "getMeta",
+        "summary": "List supported operations and settings",
+        "responses": {
+          "200": {
+            "description": "Metadata response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "operations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "settings": {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  }
+                },
+                "examples": {
+                  "meta": {
+                    "summary": "Example metadata",
+                    "value": {
+                      "operations": [
+                        "getUsers",
+                        "createLead",
+                        "getR2UploadUrl",
+                        "getR2DownloadUrl"
+                      ],
+                      "settings": {
+                        "timeoutDefaultMs": 30000,
+                        "uploadModes": [
+                          "base64",
+                          "fileUrl",
+                          "r2"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized (missing/invalid gateway bearer)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "bundlesPerSQ": 3,
+  "starterLFPerBundle": 120,
+  "underlaymentSQPerRoll": 10,
+  "iceWaterLFPerRoll": 65,
+  "notes": [
+    "Always include valleys with I&W",
+    "Some cities require I&W at eaves — check code list"
+  ]
+}
+

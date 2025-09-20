@@ -1,0 +1,7 @@
+{
+  "lead_kickoff": "@{{lead_owner}} — New lead created for {{address}}. Status: awaiting EagleView & contract.",
+  "supplement_request": "@{{supplement_tags}} — Please supplement full claim (+ O&P if multiple trades). Anything else to add?",
+  "permit_request": "@{{permits_tags}} — Permit details: Structures={{structures}}; Solar={{solar_panels}}; Skylights={{skylights}}; Drip edge color={{drip_edge_color}}.",
+  "production_handoff": "@{{production_tags}} — Job is ready for build. Notes: {{notes}}. EV: {{ev_summary}}; Colors: {{colors}}."
+}
+
