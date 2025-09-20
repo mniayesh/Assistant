@@ -1,0 +1,419 @@
+
+Model: Jobs, Statuses, and Transitions
+Single source of truth. Each job has a status (one of the seven below), prereqs that must be satisfied to move forward, and a needs[] list that spells out only the real blockers for the next transition (not nice-to-haves like extra photos).
+Canonical statuses
+	•	[[Inspected]]  
+	•	[[Contract Signed]]  
+	•	[[Ready for Production]]  
+	•	[[Scheduled]]  
+	•	[[Build Complete]]  
+	•	[[Job Complete]]  
+	•	[[Invoiced]]  
+Status ledger (what the agent tracks per job)
+{
+  "status": "[[...]]",
+  "enteredAt": "ISO-8601",
+  "needs": ["clear, actionable blockers for the next transition only"],
+  "nextActions": ["1-2 crisp steps that clear needs[]"],
+  "lastThreadReplyAt": "ISO-8601",     // to detect stale threads
+  "profitSignals": {                   // helps prioritization
+    "rcv": 0,
+    "tradeCount": 0,
+    "solarPanels": 0
+  }
+}
+The agent recomputes this ledger whenever files, fields, or messages change.
+Prioritization & reminders (how the agent “pushes kindly”)
+	•	Rank by: (1) profit potential (latest insurer RCV × stage multiplier), (2) urgency (days stuck, upcoming inspection/permit deadlines, stale replies), (3) impact (few, high-value blockers rise).  
+	•	Nudge style: one short, polite, actionable step per job (no nagging; smart intervals).  
+Funnel vs. internal status
+	•	AccuLynx funnel: the agent may advance a job to Prospect; office is the only one authorized to push to Approved / Complete / Invoiced.  
+	•	The seven internal statuses are separate and are managed by the agent to run the workflow.  
+API safety
+	•	Always use the accu-gateway Action for AccuLynx. Don’t guess endpoints/fields. On errors, surface HTTP status + upstream JSON. Collect only the minimum PII needed.  
+
+
+
+Chronological Workflow
+0) Intake & Inspection → set [[Inspected]]
+Assigned vs. Unassigned
+	•	Assigned (lead already exists): attach notes and proceed.  
+	•	Unassigned: Create Lead with one targeted follow-up if any required field is missing:  
+	◦	firstName, lastName, workType, phoneNumber1, street, city, state, zip  
+	◦	jobCategory (residential / commercial)  
+	◦	workType defaults to inspection; if claim filed = yes, use insurance  
+	◦	leadSource (self gen / canvasser)  
+	◦	If commercial: also companyName  
+One-shot intake confirmation
+	•	“Confirm: job category (res/com), claim filed (y/n), contract signed (y/n), lead source (self gen/canvasser).”  
+Photos (suggested, not gating)
+	•	Elevations (front, rear, left, right); Overviews (slope/ridge/hip/pitch + transitions)  
+	•	Damages (close-ups + chalked); Metals (gutters/downspouts/vents/flashing/chimney caps)  
+	•	Penetrations (chimneys, vents, skylights, pipe jacks); Overhangs (drip, soffit, fascia + vents)  
+	•	Trades impact (siding, windows, doors, screens, fencing, decking, fascia)  
+Leadership tag (policy)
+	•	@Chris Sanchez @Ryan Sanchez — Inspection completed. Claim filed: [y/n]. Contract signed: [y/n].  
+Status
+	•	When initial inspection media is present (any reasonable set), set [[Inspected]].  
+Clear needs[] examples for an outsider
+	•	“To work claim tasks, provide insurance company name and claim number.”  
+	•	“If a contract has been signed, upload the scanned contract to proceed to Contract Signed.”  
+
+
+
+1) Claim Setup & Approval (fields + insurer document)
+Set claim fields
+	•	claimFiled = yes, insuranceCompany, claimNumber, metWithAdjuster = yes (if applicable), claimApproved = yes.  
+Upload the insurer’s estimate/SOL
+	•	Filenames are often inconsistent: it might be LASTNAME_SOL.pdf, SOL_finalized.pdf, estimate.pdf, settlement.pdf, or even unlabeled.  
+	•	The agent must verify: this is the carrier’s document (Scope/Statement/Settlement), not a CRC (your company) supplementer draft.  
+Thread note
+	•	“Claim approved. Insurer estimate/SOL uploaded.”  
+Good needs[] phrasing
+	•	“Need the carrier’s estimate/SOL file (the CRC supplement estimate doesn’t count).”  
+	•	“Claim number missing; please provide to align all paperwork.”  
+
+
+
+2) Contract Signed → set [[Contract Signed]]
+Upload
+	•	Scan & store the signed contract. It’s typically handwritten; no field validation is required.  
+AccuLynx funnel
+	•	Push to Prospect. (Office controls later funnel moves.)  
+Thread note
+	•	“Contract signed.”  
+
+
+
+3) Measurements (EagleView / QuickMeasures)
+Default scope
+	•	Default is all structures unless the homeowner specifies a different scope (e.g., “house only,” exclude shed/garage).  
+Prompt
+	•	“Include walls? (y/n). Default is all structures unless specified.”  
+Type rules
+	•	Residential, no walls → Residential Premium  
+	•	Residential, walls → Roof & Wall Report  
+	•	Commercial → Commercial Premium  
+(Status remains [[Contract Signed]] until the Ready-for-Production gate is cleared.)
+
+
+
+4) Permit Preparation (after contract + claim approval)
+Prereqs
+	•	Contract is signed and claim is approved.  
+Gather the permit packet details (the essentials permitting & production rely on)
+	•	Structures getting new roofs (e.g., House; House + Shed)  
+	•	Solar panels (count)  
+	•	Skylights (count)  
+	•	Drip-edge color (from your materials options)  
+Message (explicit tags & complete content)
+@Permits Permits @Productions Department — Please apply for permit.
+Structures: [list]. Solar panels: [#]. Skylights: [#]. Drip edge color: [color].
+	•	 If solar > 0: also tag @CRTFD Home Services.  
+Great needs[] phrasing if info is missing
+	•	“For permit submission we still need: solar panel count, skylight count, and drip-edge color.”  
+
+
+
+5) Supplement Workflow (after contract + claim approval)
+Prompt
+	•	“List any specific items you want included in the supplement.”  
+Message (tags & language)
+@Chris Sanchez @Ryan Sanchez @Supplement Experts —
+Please supplement full claim including:
+• [specific items]
+	•	 If the carrier estimate includes three or more trades, append: “+ O&P”.  
+Track replies
+	•	When someone says “estimate uploaded” → supplement = sent  
+	•	When “estimate approved” → supplement = approved  
+Good needs[]
+	•	“Waiting on supplement approval from Supplement Experts.”  
+
+
+
+6) Financial Worksheet (a.k.a. Contract Worksheet)
+Inputs
+	•	Parse the latest approved insurer estimate/SOL for RCV by structure and trade (ignore CRC supplement drafts).  
+	•	If supplement = approved, switch to the finalized insurer numbers.  
+Confirm Scope of Work (what the HO actually wants)
+	•	Present parsed structures/trades and ask which are in scope.  
+	◦	If the HO declines a line, exclude it from the worksheet.  
+Admin-Cost rule
+	•	If a non-scoped line received a supplement increase, add Admin Cost = 20% of that increase; otherwise $0.  
+	◦	Example: +$100 fascia increase, fascia not in scope → add $20 Admin Cost.  
+Solar
+	•	Add [# of panels] × $600.  
+Output
+	•	Save the worksheet with per-trade/structure totals and a final corrected total.  
+Helpful needs[]
+	•	“Please confirm which trades/structures are in scope so I can finalize the worksheet.”  
+
+
+
+7) Check Received (whenever it happens)
+File + message
+	•	Upload/scan Job Paperwork/[LASTNAME]_Check.pdf (or log amount).  
+	•	Post: @Marie Scholtes — Check received for $[amount].  
+(Contract note: deposit/check is typically due at signing or by material delivery.)
+
+
+
+8) Material Order (and the “Six Essentials”) → set [[Ready for Production]]
+You only mark [[Ready for Production]] after all six are true:
+	1	Signed Contract (stored; scan is fine)  
+	2	Claim Approved (carrier estimate/SOL on file; filename may be odd; verify carrier doc)  
+	3	Measurements (EV/QuickMeasures; default all structures unless HO limited scope)  
+	4	Supplement requested (approved if available)  
+	5	Permit details captured (structures, solar count, skylight count, drip-edge color)  
+	6	Financial Worksheet completed  
+AccuLynx material-order flow
+	1	New Order → No Real-Time Pricing → Material & Labor → Roofing → Template → choose shingle line → Next.  
+	2	Enter EV totals: squares (SQ), LF for ridges/hips/valleys/rakes/eaves, sidewall/headwall (for step/counter flashing), and counts (pipe sizes, skylights, chimneys, goosenecks).  
+	3	On the material screen, resolve every orange (!) (required selections), delete unused alternates, then Save (confirm Save).  
+Selections (your constraints)
+	•	Shingle line: choose exactly one of two options (e.g., Option A or Option B). Delete the unused one.  
+	•	Shingle color: from the chosen line (required).  
+	•	Drip-edge color: required (note: eaves commonly 2×4; rakes 2×2; just record the color choice).  
+	•	Ventilation: choose ridge OR box; if box, enter count; delete the unused type.  
+	•	Underlayment: pick one product, delete the other.  
+	•	I&W: valleys always; eaves if your jurisdiction requires.  
+	•	Step flashing color, pipe-jack sizes, sealant, touch-up paint, OSB if re-deck, etc.  
+Measurements & math the agent must compute
+	•	Shingles (field): Bundles = ceil(SQ * (1 + W_shingle) * 3)  (3 bundles/SQ; waste typically 7–15% depending on hips/valleys/steeps)  
+	•	Starter: choose eaves-only or eaves+rakes  Bundles = ceil( (LF_eave [+ LF_rake]) * (1 + W) / 120 ) (≈120 LF/bundle)  
+	•	Ridge/Hip caps: Bundles = ceil( (LF_ridge + LF_hip) * (1 + W) / 25 )  
+	•	Underlayment: effective ≈10 SQ/roll → Rolls = ceil(SQ_eff / 10)  
+	•	Ice & Water: ≈200 ft²/roll → compute eave band (by depth) + valleys; Rolls = ceil(Area_total * (1 + W) / 200)  
+	•	Drip edge: 10′ sticks → Sticks = ceil((LF_eave + LF_rake) * (1 + W) / 10)  
+	•	Vents: pick one system; size by NFA; delete the other  
+	•	Fasteners: coil nails ≈ 13 SQ/box; cap fasteners ≈ 28 SQ/box (compute boxes by coverage)  
+Production handoff (message)
+@Productions Department — Job is ready for build/production.
+Notes: [satellite remove/reset?], [short nails/open soffits?], [re-deck?],
+Structures: [House only / House+Shed], Gutters: [remove/keep].
+Status
+	•	When the six essentials are present and the order is saved with required selections resolved, set [[Ready for Production]].  
+If still not ready, needs[] should sound like this
+	•	“Permit details incomplete (need structures, solar count, skylight count, drip-edge color).”  
+	•	“Have a CRC supplement file — still need the carrier estimate/SOL to proceed.”  
+
+
+
+9) Schedule Build → [[Scheduled]] → [[Build Complete]]
+Timing prompt
+	•	“Any timing constraints? If none, I’ll request ASAP. You can also set ‘not before [date]’ or blackout dates.”  
+Scheduling message (full tags)
+@Chris Sanchez @Ryan Sanchez @Productions Department @Permits Permits —
+Ready for production. Please schedule build [ASAP / timing notes].
+	•	 If solar > 0: also tag @CRTFD Home Services.  
+Record
+	•	When Production replies with a build date, store it and set [[Scheduled]].  
+Inspections
+	•	Ensure mid-roof and final inspections are scheduled.  
+	•	When final passes, set [[Build Complete]].  
+
+
+
+10) Other Trades → [[Job Complete]]
+Enumerate & capture
+	•	From the Trades Order Form: Gutters, Paint/Stain, Siding, Fencing, Power Wash, Other.  
+	•	For each, capture subcontractor, scheduled date, and who pays if the insurer funds only part (e.g., one run of gutters and the HO wants more).  
+Thread update pattern
+	•	“[Trade] scheduled with [Subcontractor] on [date].”  
+Status
+	•	When all scheduled trades are completed (and completion photos are posted), set [[Job Complete]].  
+
+
+
+11) Closeout & Final Invoice / COC → [[Invoiced]]
+COC request
+@Supplement Experts — Build is complete, trades finished: [list]. Please send COC.
+Status
+	•	When reply says “Sent COC,” set [[Invoiced]].  
+
+
+
+Message Templates (copy/paste)
+Inspection kickoff
+@Chris Sanchez @Ryan Sanchez — Inspection completed. Claim filed: [y/n]. Contract signed: [y/n].
+Permit request
+@Permits Permits @Productions Department — Please apply for permit.  Structures: [House / House+Shed / …]  Solar panels: [#]  Skylights: [#]  Drip edge color: [color]  @CRTFD Home Services (if solar > 0)
+Supplement request
+@Chris Sanchez @Ryan Sanchez @Supplement Experts — Please supplement full claim including:  • [specific items]  (If ≥3 trades in the carrier estimate, add “+ O&P”)
+Material order → production handoff
+@Productions Department — Job is ready for build/production.  Notes: [satellite remove/reset], [short nails/open soffits], [re-deck], Structures: [House only / House+Shed], Gutters: [remove/keep].
+Scheduling
+@Chris Sanchez @Ryan Sanchez @Productions Department @Permits Permits — Ready for production. Please schedule build [ASAP / not before DATE / blackout dates].  @CRTFD Home Services (if solar > 0)
+Check received
+@Marie Scholtes — Check received for $[amount].
+COC
+@Supplement Experts — Build is complete, trades finished: [list]. Please send COC.
+
+
+
+
+  Bindings
+  - DB (D1)
+      - Type: D1 Database
+      - Name: accu_gateway_db
+      - Purpose: relational storage (jobs, estimates, worksheet, events)
+  - POLICY_KV (KV)
+      - Type: Workers KV
+      - Namespace ID: d9959d0871f14fe29554423e50de5ddf
+      - Purpose: policy/config/templates/materials metadata
+  - DOCS (R2)
+      - Type: R2 Bucket
+      - Bucket: acculynx-uploads
+      - Purpose: binary artifacts (docs, HTML captures, receipts)
+  - JOBS_OUT (Queues)
+      - Type: Queue (producer/consumer bound)
+      - Queue: accu-jobs
+  - JOB (Durable Object)
+      - Type: Durable Object class
+      - Class: JobController
+      - Migration tag: v1
+  - VECTORS (Vectorize)
+      - Type: Vectorize Index
+      - Index: accu-policies
+  - AI (Workers AI)
+      - Type: AI binding
+  - MYBROWSER (Browser Rendering)
+      - Type: Browser
+      - Purpose: headless browser sessions where a web session is required
+  - METRICS (Analytics Engine)
+      - Dataset: accu_gateway (via analytics_engine_datasets)
+  - Assets
+      - [assets] directory: public
+  Secrets (selected)
+  - ACCULYNX_TOKEN (required)
+  - ACCULYNX_TOKEN__<actorUserId> (optional per-user)
+  - GATEWAY_TOKEN (optional inbound gateway auth)
+  Action / OpenAPI Assets (deployed)
+  - Manifest (assistant): /.well-known/assistant.ai-plugin.json
+  - Assistant OpenAPI: /openapi.assistant.json
+  - Generic OpenAPI (memoized): /.well-known/openapi.json, /openapi.json
+  - Logo: /logo.svg
+  - Origin: https://accu-gateway.mniayesh.workers.dev
+  Gateway (Public HTTP)
+  - GET /health
+      - 200 JSON: { ok: true }
+  - GET /version
+      - 200 JSON: { ok: true, buildTime, features: { d1, r2, kv, queues, ai } }
+  - GET /gateway/meta
+      - 200 JSON: { ok: true, counts, operations: string[] }
+  - GET /gateway/ops/{operation}
+      - 200 JSON: { ok: true, operation, method, path, requiredPath: string[] }
+      - 404 JSON on unknown operation
+  - POST /gateway
+      - Body: { operation: string, actorUserId?: string, timeoutMs?: number, dryRun?: boolean, params?: { path?: object, query?: object, body?: object, contentType?:
+  'application/json'|'multipart/form-data'|'application/x-www-form-urlencoded' } }
+      - 200 passthrough JSON/text; 400/401/404 JSON error
+  - POST /gateway/raw
+      - Query: operation? OR (path + method); actorUserId?; timeoutMs?; baseUrl?
+      - Body: arbitrary (binary) or envelope { contentType: string, body: any }
+      - 200 passthrough; 400/404 error
+  - R2 object proxy
+      - GET /r2/object/{key} → 200 binary or 404
+      - PUT /r2/object/{key} with content-type → 200 JSON { ok: true, key }
+  - POST /r2/presign
+      - Body: { key: string, mode?: 'put'|'get', contentType?: string }
+      - 200 JSON: { ok: true, urls: { get, put }, mode, contentType }
+  - POST /readiness/analyze
+      - Body: { jobId: string, observed: object }
+      - 200 JSON: { ok: true, jobId, result: { missing: string[], warnings: string[], mislabeled: string[] } }
+  - GET /tools/url-info?url=...
+      - 200 JSON: HEAD/metadata probe
+  Assistant: Material-Order (HTTP)
+  - POST /assistant/material-order/wizard
+      - Input fields:
+          - state?: object (opaque; round-tripped)
+          - jobQuery?: string
+          - selectJobId?: string
+          - updates?: object (may include measurements/selections/optionsInput)
+          - action?: 'change'|'draft'|'approval'
+      - Output envelope:
+          - ok: true
+          - state: object
+          - status: 'need-job'|'need-input'|'review'|'action-selected'|'error'
+          - next?: { field: string, prompt: string, type: 'input'|'number'|'choice'|'action', choices?: array, unit?: string, min/max/step?: number, help?: string }
+          - matches?: array of { value: jobId, label, description?, meta? }
+          - review?: { items, summary, warnings, measurements, selections, wastePct }
+          - actions?: array of { value, label, description }
+          - result?: object (present when action selected)
+  - POST /assistant/material-order/build
+      - Body: { measurements: object, selections: object, options?: object }
+      - 200 JSON: { ok: true, built, warnings?: string[] }
+  - POST /assistant/material-order/compose-ui-put
+      - Body: { baseline?: object, built: object }
+      - 200 JSON: { ok: true, payload: object } (UI PUT composition)
+  - POST /assistant/material-order/submit
+      - Body: { jobId: string, filename?: string, built?: object, order?: object, submitToSupplier?: boolean }
+      - 200 JSON: { ok: true, submitted: true, orderId, uploadedToJobDocuments: boolean, uploadStatus, submittedToSupplier: false, notes }
+  - POST /assistant/material-order/reconcile
+      - 200 JSON: { ok: true, status: 'pending', notes }
+  - GET|POST /assistant/material-order/endpoints-from-html
+      - GET: query htmlKey=string (R2 key)
+      - POST: { html?: string, htmlKey?: string }
+      - 200 JSON: { ok: true, count: { endpoints, bundles }, endpoints: string[], bundles: string[], hosts: string[] }
+  - POST /assistant/material-order/save-draft-token
+      - Body: { mode: 'create'|'update'|'submit', api: { path: string, method?: 'POST'|'PUT', baseUrl?: string }, jobId?: string, supplierId?: string, orderId?:
+  string, built?: object, order?: object, dryRun?: boolean }
+      - 200 JSON: dryRun: { method, path, baseUrl, body } OR passthrough preview { status, contentType, sample/jsonKeys }
+  - POST /assistant/material-order/submit-via-gateway
+      - Body: { jobId: string, supplierId: string, order?: object, mode?: 'draft'|'approval'|'submit' }
+      - 200 JSON: passthrough summary (status/content preview) or error
+  - Utilities
+      - POST /assistant/acculynx/probe
+          - Body: { paths: (string|{ path, method })[], limit?: number, timeoutMs?: number, bearer?: string, baseUrl?: string }
+          - 200 JSON: { ok: true, results: [{ path, method, status?, contentType?, sample?, jsonKeys?, error? }] }
+      - POST /assistant/acculynx/meta-probe
+          - Body: { topic?: string, limit?: number, timeoutMs?: number, bearer?: string, baseUrl?: string }
+          - 200 JSON: { ok: true, topic, count, results }
+  Assistant Wizard: Field Keys
+  - Measurements: sq, ridges, hips, valleys, rakes, eaves, stepFlashing (numbers; units SQ or LF)
+  - Selections: selections.line, selections.shingleColor, selections.dripEdgeColor, selections.vent.type, selections.vent.count
+  - Options: optionsInput.wastePct (0..0.2), optionsInput.city (string)
+  - Job selection: jobQuery (input), selectJobId (choice)
+  AccuLynx Session‑Bound (UI) Endpoints (observed)
+  - GET /api/Orders/BeginSupplierOrder?orderID={id}&supplierID={supplierId}
+  - GET /api/Orders/{orderId}
+  - PUT /api/Orders/{orderId}
+  - Characteristics: browser session required (cookies/XSRF), tied to UI internals.
+  Auth / CORS
+  - Inbound Authorization:
+      - Optional; enforced only if GATEWAY_TOKEN is set. Header: Authorization: Bearer <token>
+  - Upstream Authorization:
+      - Bearer derived from ACCULYNX_TOKEN or ACCULYNX_TOKEN__<actorUserId>
+  - CORS:
+      - Access-Control-Allow-Origin: *
+      - Methods: GET, POST, OPTIONS
+      - Allow-Headers: authorization, content-type
+  KV Keys (seeded examples)
+  - templates:messages:v1 (JSON map)
+  - policy:must_haves:v1 (string[])
+  - policy:photos:required:v1 (object)
+  - policy:labels:v1 (object)
+  - materials:cheatsheet:v1 (object)
+  - tags:roles:v1 (object)
+  D1 Schema (created on demand)
+  - jobs(job_id TEXT PK, created_at INTEGER, address TEXT)
+  - estimates(estimate_id TEXT PK, job_id TEXT, insurer TEXT, estimate_date INTEGER, approved INTEGER, source_url TEXT, totals_json TEXT, created_at INTEGER)
+  - estimate_lines(id TEXT PK, estimate_id TEXT, code TEXT, description TEXT, trade TEXT, qty REAL, unit_price REAL, total REAL, increase_amount REAL, is_scoped
+  INTEGER, created_at INTEGER)
+  - worksheet(id TEXT PK, job_id TEXT, admin_cost REAL, final_total REAL, created_at INTEGER)
+  - worksheet_lines(id TEXT PK, worksheet_id TEXT, code TEXT, description TEXT, total REAL, rationale TEXT, created_at INTEGER)
+  - events(id TEXT PK, job_id TEXT, type TEXT, payload TEXT, created_at INTEGER)
+  Queues (accu-jobs)
+  - Producer: bound as JOBS_OUT
+  - Consumer handler: exported on Worker default export (queue)
+  - Behavior (summary): consumes messages with { jobId, sourceUrl, ... }, fetches JSON, persists to D1; non‑JSON stored to R2; computes worksheet and events
+  Assistant Action OpenAPI (assistant)
+  - Operation enum: enumerates 158 AccuLynx operations (dispatchable via /gateway)
+  - x-accu-ops: array of { operation, method, path }
+  - x-accu-op-schemas: map operation → { method, path, pathParams[], requestSchema, responseSchema }
+  - /gateway request schema: oneOf [generic dispatch, per‑operation request envelopes]
+  - /gateway/raw, /gateway/meta, /gateway/ops/{operation} present
+  Notes
+  - All endpoint paths and bindings listed are from the deployed Worker and companion assistant code. Where endpoints are tied to a UI session, they are marked
+  “session‑bound.”
+
